@@ -2,6 +2,10 @@ name: Version & Release
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (ex. 1.5.0)'
+        required: true
   
 permissions:
   contents: write 
@@ -18,7 +22,12 @@ jobs:
       - run: npm test
       - run: git config user.name "github-actions[bot]"
       - run: git config user.email "github-actions[bot]@users.noreply.github.com"
-      - run: npm version minor
+      - run: |
+          if [ -z "${{ github.event.inputs.version }}" ]; then
+            npm version patch
+          else
+            npm version ${{ github.event.inputs.version }}
+          fi
       - run: git push --follow-tags
       - run: gh release create v$(node -p "require('./package.json').version") --generate-notes
         env:
