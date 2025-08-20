@@ -33,7 +33,7 @@ function checkNum(val: string) {
 }
 ```
 전화번호를 입력하는 칸은 회원가입, 내 정보 수정 및 입력 등 다양한 곳에서 사용되기 때문에 재사용성이 높아 패키지화하였습니다. <br>
-또한 해당 Input에 type='tel'을 사용하는 경우가 많기 때문에 number type만 입력되는 함수도 만들어 배포하였습니다. <br>
+또한 해당 Input에 type='tel'을 사용하는 경우가 많기 때문에 number type만 입력되는 함수도 만들어 배포하였습니다. <br><br>
 
 > 주요 코드 2 - Testing 코드 구성
 
@@ -53,7 +53,7 @@ it('convert string to phone number form',() => {
 ```
 간단한 실행 확인용 코드와 함수 두 개의 Testing 코드를 작성하여 테스트를 진행하였습니다.
 
-<img width="1239" height="270" alt="utill1" src="https://github.com/user-attachments/assets/4a03359d-c293-4961-b84c-95bb02242257" /><br>
+<img width="1239" height="270" alt="utill1" src="https://github.com/user-attachments/assets/4a03359d-c293-4961-b84c-95bb02242257" /><br><br>
 
 > 주요 코드 3 - github workflows 구성
 
